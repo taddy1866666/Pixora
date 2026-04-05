@@ -153,7 +153,7 @@ export default function Camera({ onNext }) {
         </div>
 
         <div className="flex flex-col flex-1 items-center justify-center min-h-0">
-          <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+          <div className="relative w-full aspect-[3/4] sm:aspect-[3/4] md:aspect-square max-w-sm sm:max-w-md md:max-w-[500px] mx-auto">
               {cameraError ? (
                 <div className="w-full h-full rounded-xl shadow-lg border-3 border-red-300 bg-red-50 flex items-center justify-center p-4">
                   <div className="text-center">

@@ -253,7 +253,7 @@ export default function Editor({ onNext }) {
       </div>
 
       {/* Sidebar - Right Side */}
-      <div className="w-full md:w-80 bg-white shadow-2xl flex flex-col overflow-hidden max-h-[45vh] sm:max-h-[40vh] md:max-h-full">
+      <div className="w-full md:w-80 bg-white shadow-2xl flex flex-col overflow-y-auto max-h-[55vh] sm:max-h-[50vh] md:max-h-full md:overflow-hidden">
         <div className="text-center px-2 xs:px-3 md:px-5 pt-2 xs:pt-3 md:pt-5 pb-0 md:pb-2">
           <h2 className="text-base xs:text-lg md:text-xl font-black bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Customize</h2>
         </div>
