@@ -1,6 +1,6 @@
-# 📸 Pixora - AI Photobooth
+# Pixora - AI Photobooth
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Install Dependencies
 ```bash
@@ -15,27 +15,27 @@ npm run dev
 ### 3. Open Browser
 Navigate to `http://localhost:5173`
 
-## 📦 What's Included
+## What's Included
 
-- ⚛️ React 18
-- 🎨 Tailwind CSS
-- 📸 react-webcam
-- 🧠 face-api.js (ready for AI integration)
-- ⚡ Vite (fast build tool)
+- React 18
+- Tailwind CSS
+- react-webcam
+- face-api.js (ready for AI integration)
+- Vite (fast build tool)
 
-## 🎯 Features
+## Features
 
-✅ Layout selection (1-4 photos)
-✅ Filter preview
-✅ Extra shot capture
-✅ AI-suggested best shots
-✅ Photo selection & arrangement
-✅ Custom editing (filters, frames)
-✅ Final preview
-✅ Tip screen (GCash/Maya)
-✅ Download photobooth strip
+✓ Layout selection (1-4 photos)
+✓ Filter preview
+✓ Extra shot capture
+✓ AI-suggested best shots
+✓ Photo selection & arrangement
+✓ Custom editing (filters, frames)
+✓ Final preview
+✓ Tip screen (GCash/Maya)
+✓ Download photobooth strip
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React + Vite
 - **Styling**: Tailwind CSS
@@ -44,7 +44,7 @@ Navigate to `http://localhost:5173`
 - **AI**: face-api.js (mock for now)
 - **State**: React Context
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 pixora/
@@ -73,7 +73,7 @@ pixora/
 └── tailwind.config.js
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Add Real QR Codes
 Edit `src/components/TipModal.jsx` and replace placeholder divs with actual QR code images.
@@ -81,7 +81,7 @@ Edit `src/components/TipModal.jsx` and replace placeholder divs with actual QR c
 ### Enable Real AI Detection
 Uncomment face-api.js code in `src/utils/ai.js` and download models from face-api.js repository.
 
-## 🚀 Deployment
+## Deployment
 
 ### Build for Production
 ```bash
@@ -94,7 +94,7 @@ npm i -g vercel
 vercel
 ```
 
-## 📝 Notes
+## Notes
 
 - Camera permission required
 - Works best on HTTPS (required for camera access in production)
