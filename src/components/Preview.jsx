@@ -129,8 +129,8 @@ export default function Preview({ onTip, onRestart }) {
           day: 'numeric', 
           year: 'numeric' 
         })
-        ctx.fillStyle = '#FFFFFF'
-        ctx.font = '48px Arial'
+        ctx.fillStyle = fontColor
+        ctx.font = `48px ${selectedFont}`
         ctx.textAlign = 'right'
         ctx.fillText(currentDate, photoX + photoW, lastPhotoY + photoHeight + 50)
       })
