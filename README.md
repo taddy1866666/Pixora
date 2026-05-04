@@ -1,5 +1,7 @@
 # Pixora - AI Photobooth
 
+    An AI-powered photobooth app. Take selfies, apply filters, and download your photos.
+
 ## Setup Instructions
 
 ### 1. Install Dependencies

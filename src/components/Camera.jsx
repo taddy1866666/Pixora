@@ -141,10 +141,14 @@ export default function Camera({ onNext }) {
 
   return (
     <>
-    <div className="h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 overflow-hidden flex flex-col">
-      <div className="w-full max-w-[700px] mx-auto px-4 py-3 flex flex-col h-full">
+    <div className="h-screen bg-gradient-to-br from-indigo-50 via-white to-rose-50 overflow-hidden flex flex-col relative">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-200/10 to-transparent rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-rose-200/10 to-transparent rounded-full filter blur-3xl pointer-events-none" />
+      
+      <div className="w-full max-w-[700px] mx-auto px-4 py-3 flex flex-col h-full relative z-10">
         <div className="animate-fade-in mb-2 xs:mb-3 text-center flex-shrink-0">
-          <h2 className="text-lg xs:text-xl md:text-2xl font-black mb-0.5 xs:mb-1 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+          <h2 className="text-lg xs:text-xl md:text-2xl font-black mb-0.5 xs:mb-1 bg-gradient-to-r from-indigo-900 to-rose-900 bg-clip-text text-transparent">
             Capture Photos
           </h2>
           <p className="text-gray-600 text-xs xs:text-sm font-bold">
@@ -171,7 +175,7 @@ export default function Camera({ onNext }) {
                       ref={webcamRef}
                       screenshotFormat="image/jpeg"
                       screenshotQuality={1.0}
-                      className="rounded-xl shadow-lg border-3 border-white ring-2 ring-gray-200 w-full h-full object-cover"
+                      className="rounded-xl shadow-2xl shadow-rose-500/20 border-2 border-rose-100 w-full h-full object-cover"
                       videoConstraints={{ 
                         facingMode: facingMode,
                         width: { ideal: 1920 },
@@ -238,7 +242,7 @@ export default function Camera({ onNext }) {
               <button
                 onClick={capturePhoto}
                 disabled={capturedImages.length >= extraShots || !cameraReady || countdown}
-                className="px-3 xs:px-4 md:px-6 py-1.5 xs:py-2 md:py-2.5 bg-red-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:bg-red-700 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 xs:gap-1.5 shadow-lg"
+                className="px-3 xs:px-4 md:px-6 py-1.5 xs:py-2 md:py-2.5 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:from-rose-600 hover:to-rose-700 hover:scale-105 hover:shadow-lg hover:shadow-rose-500/30 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 xs:gap-1.5 shadow-md"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
@@ -249,7 +253,7 @@ export default function Camera({ onNext }) {
               <button
                 onClick={flipCamera}
                 disabled={!cameraReady}
-                className="px-2 xs:px-3 md:px-5 py-1.5 xs:py-2 md:py-2.5 bg-white border-2 border-gray-300 text-gray-800 rounded-lg xs:rounded-xl font-semibold text-xs xs:text-sm md:text-base hover:bg-gray-50 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 xs:gap-1.5 shadow-md"
+                className="px-2 xs:px-3 md:px-5 py-1.5 xs:py-2 md:py-2.5 bg-white border-2 border-gray-300 text-gray-800 rounded-lg xs:rounded-xl font-semibold text-xs xs:text-sm md:text-base hover:bg-gradient-to-br hover:from-rose-50 hover:to-indigo-50 hover:border-rose-300 hover:scale-105 hover:shadow-md hover:shadow-rose-200/30 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 xs:gap-1.5 shadow-sm"
               >
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -260,7 +264,7 @@ export default function Camera({ onNext }) {
               <button
                 onClick={() => fileInputRef.current?.click()}
                 disabled={capturedImages.length >= extraShots}
-                className="px-2 xs:px-3 md:px-5 py-1.5 xs:py-2 md:py-2.5 bg-white border-2 border-gray-300 text-gray-800 rounded-lg xs:rounded-xl font-semibold text-xs xs:text-sm md:text-base hover:bg-gray-50 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 xs:gap-1.5 shadow-md"
+                className="px-2 xs:px-3 md:px-5 py-1.5 xs:py-2 md:py-2.5 bg-white border-2 border-gray-300 text-gray-800 rounded-lg xs:rounded-xl font-semibold text-xs xs:text-sm md:text-base hover:bg-gradient-to-br hover:from-rose-50 hover:to-indigo-50 hover:border-rose-300 hover:scale-105 hover:shadow-md hover:shadow-rose-200/30 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 xs:gap-1.5 shadow-sm"
               >
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
@@ -271,7 +275,7 @@ export default function Camera({ onNext }) {
               {capturedImages.length > 0 && (
                 <button
                   onClick={() => setShowPhotosModal(true)}
-                  className="px-2 xs:px-3 md:px-5 py-1.5 xs:py-2 md:py-2.5 bg-blue-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:bg-blue-700 active:scale-95 transition-all flex items-center gap-1 xs:gap-1.5 shadow-lg"
+                  className="px-2 xs:px-3 md:px-5 py-1.5 xs:py-2 md:py-2.5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:from-indigo-600 hover:to-indigo-700 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/30 active:scale-95 transition-all flex items-center gap-1 xs:gap-1.5 shadow-md"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -293,15 +297,15 @@ export default function Camera({ onNext }) {
     </div>
 
     {showPhotosModal && (
-      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-3 xs:p-4 animate-fade-in">
-        <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto p-3 xs:p-4 md:p-6 animate-scale-in">
-          <div className="flex justify-between items-center mb-3 xs:mb-4">
-            <h3 className="text-xl xs:text-2xl md:text-3xl font-black text-gray-800">Captured Photos</h3>
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-3 xs:p-4 animate-fade-in">
+        <div className="bg-gradient-to-br from-white to-indigo-50/30 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-auto p-3 xs:p-4 md:p-6 animate-scale-in shadow-2xl shadow-black/30 border border-white/50">
+          <div className="flex justify-between items-center mb-3 xs:mb-4 border-b border-indigo-100 pb-3">
+            <h3 className="text-xl xs:text-2xl md:text-3xl font-black bg-gradient-to-r from-indigo-900 to-rose-900 bg-clip-text text-transparent">Captured Photos</h3>
             <button
               onClick={() => setShowPhotosModal(false)}
-              className="w-8 xs:w-10 h-8 xs:h-10 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors flex-shrink-0"
+              className="w-8 xs:w-10 h-8 xs:h-10 bg-gradient-to-br from-rose-100 to-indigo-100 hover:from-rose-200 hover:to-indigo-200 rounded-full flex items-center justify-center transition-all flex-shrink-0 shadow-md hover:shadow-lg"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -343,10 +347,10 @@ export default function Camera({ onNext }) {
           </div>
 
           {capturedImages.length === extraShots && (
-            <div className="flex gap-2 xs:gap-3 justify-center flex-wrap">
+            <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 justify-center border-t border-indigo-100 pt-4">
               <button
                 onClick={handleRetake}
-                className="px-4 xs:px-6 py-2 xs:py-3 bg-white border-2 border-gray-400 text-gray-800 rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:bg-gray-50 active:scale-95 transition-all flex items-center gap-1.5 xs:gap-2 shadow-lg"
+                className="px-4 xs:px-6 py-2 xs:py-3 bg-white border-2 border-gray-300 text-gray-800 rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:bg-gradient-to-br hover:from-indigo-50 hover:to-rose-50 hover:border-rose-300 hover:scale-105 hover:shadow-lg active:scale-95 transition-all flex items-center justify-center gap-1.5 xs:gap-2 shadow-sm"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -355,7 +359,7 @@ export default function Camera({ onNext }) {
               </button>
               <button
                 onClick={handleContinue}
-                className="px-6 xs:px-8 py-2 xs:py-3 bg-red-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base md:text-lg hover:bg-red-700 active:scale-95 transition-all flex items-center gap-1.5 xs:gap-2 shadow-xl"
+                className="px-6 xs:px-8 py-2 xs:py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base md:text-lg hover:from-rose-600 hover:to-rose-700 hover:scale-105 hover:shadow-lg hover:shadow-rose-500/30 active:scale-95 transition-all flex items-center justify-center gap-1.5 xs:gap-2 shadow-lg flex-1 xs:flex-none"
               >
                 Continue
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

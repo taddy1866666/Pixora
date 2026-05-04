@@ -201,16 +201,20 @@ export default function Editor({ onNext }) {
   }, [capturedShots, filter, templateColor, selectedFont, fontColor])
 
   return (
-    <div className="h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 overflow-hidden flex flex-col md:flex-row">
+    <div className="h-screen bg-gradient-to-br from-indigo-50 via-white to-rose-50 overflow-hidden flex flex-col md:flex-row relative">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-200/10 to-transparent rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-rose-200/10 to-transparent rounded-full filter blur-3xl pointer-events-none" />
+      
       {/* Preview Section - Centered */}
-      <div className="flex-1 flex items-center justify-center p-1 xs:p-2 sm:p-3 md:p-4 w-full md:w-auto" style={{ marginRight: window.innerWidth >= 768 ? '-160px' : '0' }}>
+      <div className="flex-1 flex items-center justify-center p-1 xs:p-2 sm:p-3 md:p-4 w-full md:w-auto relative z-10" style={{ marginRight: window.innerWidth >= 768 ? '-160px' : '0' }}>
         <div className="flex flex-col items-center w-full max-w-xs xs:max-w-sm md:max-w-none mx-auto">
-          <h2 className="text-base xs:text-lg md:text-xl font-black mb-1 xs:mb-2 text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Preview</h2>
+          <h2 className="text-base xs:text-lg md:text-xl font-black mb-1 xs:mb-2 text-center bg-gradient-to-r from-indigo-900 to-rose-900 bg-clip-text text-transparent">Preview</h2>
           
           <div className="relative w-full mx-auto" style={{ maxWidth: previewMaxWidth }}>
             <canvas
               ref={canvasRef}
-              className="shadow-2xl bg-white w-full h-auto rounded-lg xs:rounded-xl"
+              className="shadow-2xl shadow-rose-500/20 bg-white w-full h-auto rounded-xl border border-rose-100"
             />
           
           {capturedShots.map((_, index) => {
@@ -253,18 +257,18 @@ export default function Editor({ onNext }) {
       </div>
 
       {/* Sidebar - Right Side */}
-      <div className="w-full md:w-80 bg-white shadow-2xl flex flex-col overflow-y-auto max-h-[55vh] sm:max-h-[50vh] md:max-h-full md:overflow-hidden">
-        <div className="text-center px-2 xs:px-3 md:px-5 pt-2 xs:pt-3 md:pt-5 pb-0 md:pb-2">
-          <h2 className="text-base xs:text-lg md:text-xl font-black bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Customize</h2>
+      <div className="w-full md:w-80 bg-gradient-to-b from-white to-indigo-50/30 shadow-2xl shadow-rose-500/10 flex flex-col overflow-y-auto max-h-[55vh] sm:max-h-[50vh] md:max-h-full md:overflow-hidden border-l border-rose-100/50 relative z-10">
+        <div className="text-center px-2 xs:px-3 md:px-5 pt-2 xs:pt-3 md:pt-5 pb-0 md:pb-2 border-b border-rose-100">
+          <h2 className="text-base xs:text-lg md:text-xl font-black bg-gradient-to-r from-indigo-900 to-rose-900 bg-clip-text text-transparent">Customize</h2>
         </div>
         
         {/* Tab Navigation */}
-        <div className="flex border-b border-gray-200 px-2 xs:px-3 md:px-5 mt-2 md:mt-3">
+        <div className="flex border-b border-rose-100 px-2 xs:px-3 md:px-5 mt-2 md:mt-3 bg-gradient-to-r from-transparent via-rose-50/20 to-transparent">
           <button
             onClick={() => setActiveTab('frames')}
             className={`flex-1 py-2 xs:py-2.5 md:py-3 px-1 xs:px-2 text-xs xs:text-sm font-bold transition-all duration-300 flex flex-col items-center gap-0.5 xs:gap-1 ${
               activeTab === 'frames'
-                ? 'text-gray-900 border-b-2 xs:border-b-3 border-amber-500'
+                ? 'text-rose-700 border-b-2 xs:border-b-3 border-rose-500 shadow-lg shadow-rose-200/20'
                 : 'text-gray-500 hover:text-gray-700'
             }`}
           >
@@ -277,7 +281,7 @@ export default function Editor({ onNext }) {
             onClick={() => setActiveTab('filters')}
             className={`flex-1 py-2 xs:py-2.5 md:py-3 px-1 xs:px-2 text-xs xs:text-sm font-bold transition-all duration-300 flex flex-col items-center gap-0.5 xs:gap-1 ${
               activeTab === 'filters'
-                ? 'text-gray-900 border-b-2 xs:border-b-3 border-amber-500'
+                ? 'text-rose-700 border-b-2 xs:border-b-3 border-rose-500 shadow-lg shadow-rose-200/20'
                 : 'text-gray-500 hover:text-gray-700'
             }`}
           >
@@ -290,7 +294,7 @@ export default function Editor({ onNext }) {
             onClick={() => setActiveTab('fonts')}
             className={`flex-1 py-2 xs:py-2.5 md:py-3 px-1 xs:px-2 text-xs xs:text-sm font-bold transition-all duration-300 flex flex-col items-center gap-0.5 xs:gap-1 ${
               activeTab === 'fonts'
-                ? 'text-gray-900 border-b-2 xs:border-b-3 border-amber-500'
+                ? 'text-rose-700 border-b-2 xs:border-b-3 border-rose-500 shadow-lg shadow-rose-200/20'
                 : 'text-gray-500 hover:text-gray-700'
             }`}
           >
@@ -338,12 +342,12 @@ export default function Editor({ onNext }) {
           {/* FILTERS Tab */}
           {activeTab === 'filters' && (
             <div className="animate-fade-in">
-              <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-1 xs:gap-1 md:gap-1.5">
+              <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 xs:gap-2.5 md:gap-1.5">
                 {filters.map(({ id, label }) => (
                   <button
                     key={id}
                     onClick={() => setFilter(id)}
-                    className={`px-1.5 xs:px-2 py-1 xs:py-1.5 rounded-lg transition-all duration-300 text-xs font-bold ${
+                    className={`px-2 xs:px-2.5 py-1.5 xs:py-2 rounded-lg transition-all duration-300 text-xs xs:text-sm font-bold ${
                       filter === id 
                         ? 'bg-red-600 text-white scale-105 shadow-lg' 
                         : 'bg-white hover:bg-gray-50 hover:scale-105 border-2 border-gray-300'
@@ -360,13 +364,13 @@ export default function Editor({ onNext }) {
           {activeTab === 'fonts' && (
             <div className="animate-fade-in">
               <div className="mb-2 xs:mb-3 md:mb-4">
-                <p className="text-xs xs:text-xs md:text-sm font-semibold text-gray-600 mb-1.5 xs:mb-2">Font Family</p>
-                <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-1 xs:gap-1 md:gap-1.5">
+                <p className="text-xs xs:text-sm md:text-sm font-semibold text-gray-600 mb-1.5 xs:mb-2">Font Family</p>
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 xs:gap-2.5 md:gap-1.5">
                   {fonts.map(({ id, label }) => (
                     <button
                       key={id}
                       onClick={() => setSelectedFont(id)}
-                      className={`px-1.5 xs:px-2 py-1 xs:py-1.5 rounded-lg transition-all duration-300 text-xs font-bold ${
+                      className={`px-2 xs:px-2.5 py-1.5 xs:py-2 rounded-lg transition-all duration-300 text-xs xs:text-sm font-bold ${
                         selectedFont === id 
                           ? 'bg-red-600 text-white scale-105 shadow-lg' 
                           : 'bg-white hover:bg-gray-50 hover:scale-105 border-2 border-gray-300'
@@ -379,13 +383,13 @@ export default function Editor({ onNext }) {
                 </div>
               </div>
               <div>
-                <p className="text-xs xs:text-xs md:text-sm font-semibold text-gray-600 mb-1.5 xs:mb-2">Font Color</p>
-                <div className="grid grid-cols-2 gap-1 xs:gap-1.5 md:gap-2">
+                <p className="text-xs xs:text-sm md:text-sm font-semibold text-gray-600 mb-1.5 xs:mb-2">Font Color</p>
+                <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-2.5 md:gap-2">
                   {fontColors.map(({ id, label, hex }) => (
                     <button
                       key={id}
                       onClick={() => setFontColor(hex)}
-                      className={`px-2 xs:px-3 py-1 xs:py-2 rounded-lg transition-all duration-300 text-xs font-bold flex items-center justify-center gap-1.5 xs:gap-2 ${
+                      className={`px-2.5 xs:px-3 py-1.5 xs:py-2 rounded-lg transition-all duration-300 text-xs xs:text-sm font-bold flex items-center justify-center gap-1.5 xs:gap-2 ${
                         fontColor === hex 
                           ? 'bg-red-600 text-white scale-105 shadow-lg' 
                           : 'bg-white hover:bg-gray-50 hover:scale-105 border-2 border-gray-300'
@@ -402,18 +406,19 @@ export default function Editor({ onNext }) {
         </div>
 
         {/* Continue Button */}
-        <div className="px-2 xs:px-3 md:px-5 pb-2 xs:pb-3 md:pb-5 border-t border-gray-200">
+        <div className="px-2 xs:px-3 md:px-5 pb-2 xs:pb-3 md:pb-5 border-t border-rose-100 bg-gradient-to-r from-rose-50/30 to-indigo-50/30">
           <button
             onClick={onNext}
-            className="group w-full mt-2 px-3 xs:px-4 md:px-6 py-2 xs:py-2.5 md:py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-bold text-xs xs:text-sm md:text-base hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 active:scale-95 transition-all duration-300 shadow-lg flex items-center justify-center gap-1.5 xs:gap-2 relative overflow-hidden"
+            className="group w-full mt-2 px-3 xs:px-4 md:px-6 py-2 xs:py-2.5 md:py-3 bg-gradient-to-r from-rose-500 via-rose-600 to-rose-700 text-white rounded-full font-bold text-xs xs:text-sm md:text-base hover:scale-105 hover:shadow-xl hover:shadow-rose-500/50 active:scale-95 transition-all duration-300 shadow-lg flex items-center justify-center gap-1.5 xs:gap-2 relative overflow-hidden"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
             <span className="relative z-10 flex items-center gap-1.5 xs:gap-2">
               Continue
-              <svg className="w-3.5 h-3.5 xs:w-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 xs:w-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
         </div>
       </div>
