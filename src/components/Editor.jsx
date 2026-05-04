@@ -406,16 +406,16 @@ export default function Editor({ onNext }) {
         </div>
 
         {/* Continue Button */}
-        <div className="px-2 xs:px-3 md:px-5 pb-2 xs:pb-3 md:pb-5 border-t border-rose-100 bg-gradient-to-r from-rose-50/30 to-indigo-50/30">
+        <div className="px-2 xs:px-3 md:px-5 pb-2 xs:pb-3 md:pb-5 border-t border-rose-100 bg-gradient-to-r from-rose-50/30 to-indigo-50/30 mt-auto">
           <button
             onClick={onNext}
-            className="group w-full mt-2 px-3 xs:px-4 md:px-6 py-2 xs:py-2.5 md:py-3 bg-gradient-to-r from-rose-500 via-rose-600 to-rose-700 text-white rounded-full font-bold text-xs xs:text-sm md:text-base hover:scale-105 hover:shadow-xl hover:shadow-rose-500/50 active:scale-95 transition-all duration-300 shadow-lg flex items-center justify-center gap-1.5 xs:gap-2 relative overflow-hidden"
+            className="group w-full mt-2 px-3 xs:px-4 md:px-6 py-2 xs:py-2.5 md:py-3 bg-gradient-to-r from-rose-500 via-rose-600 to-rose-700 text-white rounded-full font-bold text-xs xs:text-sm md:text-base hover:scale-105 hover:shadow-xl hover:shadow-rose-500/50 active:scale-95 transition-all duration-300 shadow-lg flex items-center justify-center gap-1 xs:gap-1.5 md:gap-2 relative overflow-hidden min-h-10 xs:min-h-11"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <span className="relative z-10 flex items-center gap-1.5 xs:gap-2">
+            <span className="relative z-10 flex items-center gap-1 xs:gap-1.5 md:gap-2 whitespace-nowrap">
               Continue
-              <svg className="w-3.5 h-3.5 xs:w-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 xs:w-4 md:w-5 h-4 xs:h-4 md:h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>

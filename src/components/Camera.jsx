@@ -347,22 +347,23 @@ export default function Camera({ onNext }) {
           </div>
 
           {capturedImages.length === extraShots && (
-            <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 justify-center border-t border-indigo-100 pt-4">
+            <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 justify-center border-t border-indigo-100 pt-3 xs:pt-4 w-full px-1 xs:px-0">
               <button
                 onClick={handleRetake}
-                className="px-4 xs:px-6 py-2 xs:py-3 bg-white border-2 border-gray-300 text-gray-800 rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:bg-gradient-to-br hover:from-indigo-50 hover:to-rose-50 hover:border-rose-300 hover:scale-105 hover:shadow-lg active:scale-95 transition-all flex items-center justify-center gap-1.5 xs:gap-2 shadow-sm"
+                className="px-3 xs:px-6 py-2 xs:py-3 bg-white border-2 border-gray-300 text-gray-800 rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base hover:bg-gradient-to-br hover:from-indigo-50 hover:to-rose-50 hover:border-rose-300 hover:scale-105 hover:shadow-lg active:scale-95 transition-all flex items-center justify-center gap-1 xs:gap-2 shadow-sm flex-1 xs:flex-none min-h-10 xs:min-h-11"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 xs:w-5 h-4 xs:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                Retake All
+                <span className="hidden xs:inline">Retake All</span>
+                <span className="xs:hidden text-xs">Retake</span>
               </button>
               <button
                 onClick={handleContinue}
-                className="px-6 xs:px-8 py-2 xs:py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base md:text-lg hover:from-rose-600 hover:to-rose-700 hover:scale-105 hover:shadow-lg hover:shadow-rose-500/30 active:scale-95 transition-all flex items-center justify-center gap-1.5 xs:gap-2 shadow-lg flex-1 xs:flex-none"
+                className="px-4 xs:px-8 py-2 xs:py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-lg xs:rounded-xl font-bold text-xs xs:text-sm md:text-base md:text-lg hover:from-rose-600 hover:to-rose-700 hover:scale-105 hover:shadow-lg hover:shadow-rose-500/30 active:scale-95 transition-all flex items-center justify-center gap-1 xs:gap-2 shadow-lg flex-1 min-h-10 xs:min-h-11"
               >
                 Continue
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 xs:w-5 h-4 xs:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </button>
