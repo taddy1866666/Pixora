@@ -29,10 +29,10 @@ export default function Photobooth({ onBack }) {
   }
 
   return (
-    <div className="min-h-screen overflow-hidden">
+    <div className="min-h-dvh bg-pixora-bg text-pixora-fg overflow-x-hidden">
       <button
         onClick={handleBack}
-        className="absolute top-4 left-4 md:top-6 md:left-6 px-4 md:px-6 py-2 md:py-3 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 z-50 shadow-lg font-semibold flex items-center gap-2 text-sm md:text-base"
+        className="btn-primary btn-pill absolute top-4 left-4 md:top-6 md:left-6 px-4 md:px-6 py-2 md:py-3 z-50 font-semibold flex items-center gap-2 text-sm md:text-base"
       >
         <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />

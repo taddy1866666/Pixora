@@ -12,34 +12,34 @@ export default function Logo({ size = 'md', showText = true }) {
     <div className="flex items-center gap-3">
       <svg width={icon} height={icon} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Camera body */}
-        <rect x="15" y="30" width="70" height="50" rx="8" fill="#DC2626"/>
-        
+        <rect x="15" y="30" width="70" height="50" rx="8" fill="#FFFFFF" />
+
         {/* Lens */}
-        <circle cx="50" cy="55" r="18" fill="#1F2937"/>
-        <circle cx="50" cy="55" r="12" fill="#374151"/>
-        <circle cx="50" cy="55" r="6" fill="#6B7280"/>
-        
+        <circle cx="50" cy="55" r="18" fill="#0A0A0A" />
+        <circle cx="50" cy="55" r="12" fill="#1A1A1A" />
+        <circle cx="50" cy="55" r="6" fill="#FFFFFF" />
+
         {/* Flash */}
-        <rect x="70" y="35" width="8" height="8" rx="2" fill="#FEF08A"/>
-        
+        <rect x="70" y="35" width="8" height="8" rx="2" fill="#0A0A0A" />
+
         {/* Viewfinder */}
-        <rect x="25" y="35" width="12" height="8" rx="2" fill="#374151"/>
-        
+        <rect x="25" y="35" width="12" height="8" rx="2" fill="#0A0A0A" />
+
         {/* Film strip accent */}
-        <rect x="10" y="25" width="4" height="60" fill="#DC2626"/>
-        <rect x="86" y="25" width="4" height="60" fill="#DC2626"/>
-        <rect x="10" y="25" width="4" height="8" fill="#991B1B"/>
-        <rect x="10" y="42" width="4" height="8" fill="#991B1B"/>
-        <rect x="10" y="59" width="4" height="8" fill="#991B1B"/>
-        <rect x="10" y="77" width="4" height="8" fill="#991B1B"/>
-        <rect x="86" y="25" width="4" height="8" fill="#991B1B"/>
-        <rect x="86" y="42" width="4" height="8" fill="#991B1B"/>
-        <rect x="86" y="59" width="4" height="8" fill="#991B1B"/>
-        <rect x="86" y="77" width="4" height="8" fill="#991B1B"/>
+        <rect x="10" y="25" width="4" height="60" fill="#FFFFFF" />
+        <rect x="86" y="25" width="4" height="60" fill="#FFFFFF" />
+        <rect x="10" y="25" width="4" height="8" fill="#0A0A0A" />
+        <rect x="10" y="42" width="4" height="8" fill="#0A0A0A" />
+        <rect x="10" y="59" width="4" height="8" fill="#0A0A0A" />
+        <rect x="10" y="77" width="4" height="8" fill="#0A0A0A" />
+        <rect x="86" y="25" width="4" height="8" fill="#0A0A0A" />
+        <rect x="86" y="42" width="4" height="8" fill="#0A0A0A" />
+        <rect x="86" y="59" width="4" height="8" fill="#0A0A0A" />
+        <rect x="86" y="77" width="4" height="8" fill="#0A0A0A" />
       </svg>
-      
+
       {showText && (
-        <span className={`${text} font-black tracking-tight text-gray-900`}>
+        <span className={`${text} font-black tracking-tight text-white`}>
           PIXORA
         </span>
       )}

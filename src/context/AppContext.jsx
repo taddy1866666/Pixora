@@ -1,4 +1,4 @@
- import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 
 const AppContext = createContext()
 
@@ -11,7 +11,7 @@ export const AppProvider = ({ children }) => {
   const [selectedShots, setSelectedShots] = useState([])
   const [frame, setFrame] = useState('classic')
   const [templateColor, setTemplateColor] = useState('white') // Template color variant
-  const [selectedFont, setSelectedFont] = useState('Arial')
+  const [selectedFont, setSelectedFont] = useState('Times New Roman')
   const [fontColor, setFontColor] = useState('#000000')
 
   // Get photo count from layout ID
@@ -31,22 +31,22 @@ export const AppProvider = ({ children }) => {
     setSelectedShots([])
     setFrame('classic')
     setTemplateColor('white')
-    setSelectedFont('Arial')
+    setSelectedFont('Times New Roman')
     setFontColor('#000000')
   }
 
   return (
     <AppContext.Provider value={{
-      layout, 
+      layout,
       setLayout,
       photoCount: getPhotoCount(layout),
-      filter, 
+      filter,
       setFilter,
-      capturedShots, 
+      capturedShots,
       setCapturedShots,
-      selectedShots, 
+      selectedShots,
       setSelectedShots,
-      frame, 
+      frame,
       setFrame,
       templateColor,
       setTemplateColor,
@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
       setFontColor,
       resetSession
     }}>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100">
+      <div className="min-h-dvh bg-pixora-bg text-pixora-fg">
         {children}
       </div>
     </AppContext.Provider>

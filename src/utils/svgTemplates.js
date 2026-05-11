@@ -4,7 +4,7 @@ export function generateStripTemplate(layoutId, color = '#FFFFFF') {
     'strip-3': generateTriple(),
     'strip-4': generateClassic()
   }
-  
+
   return templates[layoutId] || templates['strip-4']
 }
 
@@ -15,11 +15,11 @@ function generateClassic() {
       <!-- White Background -->
       <rect width="400" height="1600" fill="#FFFFFF"/>
       
-      <!-- Outer border -->
-      <rect x="20" y="20" width="360" height="1560" fill="none" stroke="#9333EA" stroke-width="6" rx="15"/>
+      <!-- Sharp Outer border -->
+      <rect x="10" y="10" width="380" height="1580" fill="none" stroke="#EEEEEE" stroke-width="2"/>
       
       <!-- Photo 1 -->
-      <rect x="50" y="50" width="300" height="370" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1" rx="8"/>
+      <rect x="30" y="30" width="340" height="370" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
       
       <!-- Divider 1 -->
       <line x1="70" y1="440" x2="330" y2="440" stroke="#9333EA" stroke-width="2" stroke-dasharray="8,4"/>
